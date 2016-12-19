@@ -15,6 +15,8 @@ The final total number of images is 24000 (18868 for training, 6290 for validati
 
 **Model Architecture** 
 
+![alt text](https://github.com/Bobeye/Behavioral_Cloning/model_architecture.png "model architecture")
+
 The model architecture was built based on the comma.ai sample (https://github.com/commaai/research/train_steering_model.py). One thing I like most about the design from comma.ai is to use ELU(Exponential Linear Unit) for activation instead of Relu, which not only introduces nonlinearity to the model, but also pushes the negative boundry to '-1', such that the trained network can be more robust. However, the initial comma.ai structure was built to deal with 320x160 images with bigger size of convolutional layer, deeper model, and bigger size of training dataset.
 
 My revised structure started from a batchnormalization layer, follows with three 3x3 convolutional layers with depth of 8, 16 and 32. I also keeped the ELU activation between convolutional layers from the original design. The flattened results are than passed through a Dropout layer with an Relu activaton (ELU may be a better choice if I had more images for training, but the experiment turned out to be worse with the current dataset if I kept the activation layer after flatten to be ELU.) After a sencond dense layer, dropout and Relu activation, the final densed output is a single number representing predicted steering angle.

@@ -15,7 +15,7 @@ The final total number of images is 24000 (18868 for training, 6290 for validati
 
 **Model Architecture** 
 
-[]!(https://github.com/Bobeye/Behavioral_Cloning/model_architecture.png "model architecture")
+[Alt text]!(https://github.com/Bobeye/Behavioral_Cloning/model_architecture.png "model architecture")
 
 The model architecture was built based on the comma.ai sample (https://github.com/commaai/research/train_steering_model.py). One thing I like most about the design from comma.ai is to use ELU(Exponential Linear Unit) for activation instead of Relu, which not only introduces nonlinearity to the model, but also pushes the negative boundry to '-1', such that the trained network can be more robust. However, the initial comma.ai structure was built to deal with 320x160 images with bigger size of convolutional layer, deeper model, and bigger size of training dataset.
 

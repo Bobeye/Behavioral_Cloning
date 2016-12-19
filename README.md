@@ -11,9 +11,9 @@ drive.py is for steering angle prediction with model.json and model.h5.
 
 Limited by the hardware, I started buiding the structure with special emphasis on small size of training data, less trial on generating new training data and less number of model parameters.
 
-The final dataset used for training was built on the original sample dataset with more than 8000 images. I replaced about 2000 images with new recordings on weaving back from the edge to the road center. I also included the left & right images for training by adding in an offset on the steering angles (+0.2 for the right, -0.2 for the left). I croped the original image to remove trees and sky. The images were transfered to YUV space and than resized to 64x16 for final training.
+The final dataset used for training was built on the original sample dataset with more than 8000 images. I added in some images with new recordings on weaving back from the edge to the road center. I also included the left & right images for training by adding in an offset on the steering angles (+0.2 for the right, -0.2 for the left). I croped the original image to remove trees and sky. The images were transfered to YUV space and than resized to 64x16 for final training.
 
-The final total number of images is 24000 (18868 for training, 6290 for validation, 2796 for test). Through the Keras ImageDataGenerator, the train image was augmented with random rotation, shifting, zooming between epochs to prevent overfitting.
+The final total number of images is 27954 (18868 for training, 6290 for validation, 2796 for test). Through the Keras ImageDataGenerator, the train image was augmented with random rotation, shifting, zooming between epochs to prevent overfitting.
 
 **Model Architecture** 
 
